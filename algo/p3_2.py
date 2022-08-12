@@ -8,7 +8,7 @@ dy = [0, 1, 0, -1]
 
 TC = int(input())
 
-for tc in range(1,TC+1):
+for tc in range(1, TC+1):
     N = int(input())
     arr = [[0] * (N ) for _ in range(N)]
 
