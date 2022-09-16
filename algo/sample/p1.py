@@ -1,17 +1,19 @@
-test = int(input())
-for test_case in range(test):
-    n, m, l = map(int, input().split())
-    arr = [0] * (n + 2)  # 값을 저장할 리스트
+import sys
+from collections import deque
+sys.stdin = open('input.txt')
+TC = int(input())
+for tc in range(1, TC + 1):
+    N = int(input())
+    arr = []
+    for i in range(N):
+        arr.append(list(map(int, input().split())))
 
+    foods = []
+    for y in range(N):
+        for x in range(N):
+            if y < x:
+                print(x, y)
+                foods.append([arr[y][x] + arr[x][y], x, y])
 
-    for _ in range(m):
-        leap_num, number = map(int, input().split())
-        arr[leap_num] = number
-    while arr[l] == 0:
-        for i in range((n//2)+1):
-            if arr[2*i] != 0:
-                arr[i] = arr[2*i]+arr[2*i+1]
-
-
-
-    print(f'#{test_case+1} {arr[l]}')
+    print(foods)
+    print(f'#{tc} {1}')
